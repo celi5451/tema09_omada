@@ -1,0 +1,75 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <Header />
+    <video autoplay loop>
+      <source src="video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <main>
+      <h1>Omada wine & deli</h1>
+      <p>Thirsty? Peckish? Curious? - We’ve got you covered!</p><p>
+        <p>Omada Wine & Deli in Østerbro, Copenhagen, is the new omada.wine headquarters – and our brand new bottle shop and deli.</p>
+        <p>Here, we curate your simple needs for life’s better necessities; wine & food.</p>
+        <p>In the shop you can find the complete line up of natural wine, cider and other mixed fermentations that you know from omada.wine. And you may even enjoy a glass of wine before you decide which bottle to take home.</p>
+      </p>
+      <h2>Our Deli Goods</h2>
+      <p>
+        Omada Wine & Deli is much more than just a bottle shop. We present a careful selection of local farmers’ cheese, charcuterie, sourdough bread and high quality groceries such as olive oil, vinegar, canned fish, spices and much more. From
+        people we work with directly or from people we trust.
+      </p>
+      <li><a class="link" href="productpage">Productpage</a></li>
+
+      <h2>Wine Tastings & Plat du Jour</h2>
+      <p>
+        You can also join in on one of our open wine tastings and sample the curated selection of natural wines in omada.wine’s monthly subscription box. Or come by for a plate of food and a glass of wine whenever one of our friends from the industry
+        is cooking a “plat du jour”.
+      </p>
+      <p>And whenever we have a winemaker in town, Omada Wine & Deli is the place to be!</p>
+    </main>
+    <Footer />
+  </body>
+</html>
+<style>
+  @font-face {
+    font-family: "aviano-sans-bold";
+    src: url(../avianosans_bold.woff);
+  }
+  @font-face {
+    font-family: "georgia";
+    src: url(../georgia.woff);
+  }
+  body {
+    background-color: var(--background-color);
+  }
+  :root {
+    --deep-orange: #ff5546;
+    --light-orange: #dc9814;
+    --text-color: #1c2d37;
+    --background-color: #fffef2;
+    --dark-blue: #3b3d64;
+  }
+  h1 {
+    color: var(--deep-orange);
+    font-family: "aviano-sans";
+  }
+  h2 {
+    color: var(--dark-blue);
+    font-family: "aviano-sans-bold";
+  }
+  p {
+    color: var(--text-color);
+    font-family: "georgia";
+  }
+</style>

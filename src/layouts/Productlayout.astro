@@ -1,0 +1,51 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <Header />
+  </body>
+  <Footer />
+</html>
+
+<style>
+  @font-face {
+    font-family: "aviano-sans-bold";
+    src: url(../avianosans_bold.woff);
+  }
+  @font-face {
+    font-family: "georgia";
+    src: url(../georgia.woff);
+  }
+  body {
+    background-color: var(--background-color);
+  }
+  :root {
+    --deep-orange: #ff5546;
+    --light-orange: #dc9814;
+    --text-color: #1c2d37;
+    --background-color: #fffef2;
+    --dark-blue: #3b3d64;
+  }
+  h1 {
+    color: var(--deep-orange);
+    font-family: "aviano-sans";
+  }
+  h2 {
+    color: var(--dark-blue);
+    font-family: "aviano-sans-bold";
+  }
+  p {
+    color: var(--text-color);
+    font-family: "georgia";
+  }
+</style>

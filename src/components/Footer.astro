@@ -1,0 +1,100 @@
+---
+import Form from "./Form.astro";
+---
+
+<footer>
+  <div class="footer-wrapper">
+    <div class="footer-column">
+      <a
+        href="https://b2104069.smushcdn.com/2104069/wp-content/uploads/2021/03/OMADA.WINE_.png?lossy=1&strip=1&webp=1%22%20class=%22nm-logo%22%20width=%22654%22%20height=%2248%22%20alt=%22omada.wine%22%20srcset=%22https://b2104069.smushcdn.com/2104069/wp-content/uploads/2021/03/OMADA.WINE_.png?size=244x18&lossy=1&strip=1&webp=1%20244w,%20https://b2104069.smushcdn.com/2104069/wp-content/uploads/2021/03/OMADA.WINE_.png?lossy=1&strip=1&webp=1%20300w,%20https://b2104069.smushcdn.com/2104069/wp-content/uploads/2021/03/OMADA.WINE_-350x26.png?lossy=1&strip=1&webp=1%20350w,%20https://b2104069.smushcdn.com/2104069/wp-content/uploads/2021/03/OMADA.WINE_.png?size=488x36&lossy=1&strip=1&webp=1%20488w,%20https://b2104069.smushcdn.com/2104069/wp-content/uploads/2021/03/OMADA.WINE_.png"
+      >
+        <img
+          src="https://b2104069.smushcdn.com/2104069/wp-content/uploads/2021/03/OMADA.WINE_.png?lossy=1&strip=1&webp=1%22%20class=%22nm-logo%22%20width=%22654%22%20height=%2248%22%20alt=%22omada.wine%22%20srcset=%22https://b2104069.smushcdn.com/2104069/wp-content/uploads/2021/03/OMADA.WINE_.png?size=244x18&lossy=1&strip=1&webp=1%20244w,%20https://b2104069.smushcdn.com/2104069/wp-content/uploads/2021/03/OMADA.WINE_.png?lossy=1&strip=1&webp=1%20300w,%20https://b2104069.smushcdn.com/2104069/wp-content/uploads/2021/03/OMADA.WINE_-350x26.png?lossy=1&strip=1&webp=1%20350w,%20https://b2104069.smushcdn.com/2104069/wp-content/uploads/2021/03/OMADA.WINE_.png?size=488x36&lossy=1&strip=1&webp=1%20488w,%20https://b2104069.smushcdn.com/2104069/wp-content/uploads/2021/03/OMADA.WINE_.png"
+          alt="Logo"
+        />
+      </a>
+      <p>The dedicated online hideout for the worldly cosmopolitans, drinking from home.</p>
+    </div>
+    <div class="footer-column">
+      <ul>
+        <li><a href="#">The Wine Journal</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Omada Industry (Wholesale)</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Delivery</a></li>
+        <li><a href="#">Payments</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <ul>
+        <li><a href="#">Industry login</a></li>
+        <li><a href="#">Partner login</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <Form />
+    </div>
+  </div>
+</footer>
+<style>
+  footer {
+    background-color: #eee;
+    padding: 20px 0;
+  }
+
+  .footer-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .footer-column {
+    flex: 1;
+    margin-right: 30px;
+  }
+
+  .footer-column:last-child {
+    margin-right: 0;
+  }
+
+  h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 5px;
+  }
+
+  a,
+  .footer-column p {
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: "georgia";
+    font-size: 0.8rem;
+  }
+  .footer-column p {
+    font-style: italic;
+  }
+
+  a:hover {
+    color: var(--deep-orange);
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    width: fit-content;
+  }
+</style>

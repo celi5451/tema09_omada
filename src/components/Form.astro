@@ -1,0 +1,13 @@
+<form>
+  <label for="name">Name:</label>
+  <input type="text" name="name" required />
+  <label for="mail">Mail:</label>
+  <input type="text" name="mail" required />
+  <button>SEND</button>
+</form>
+<script>
+  const url = "https://plvxocuuxcvvcyxybbvf.supabase.co/rest/v1/testimonials";
+  const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBsdnhvY3V1eGN2dmN5eHliYnZmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE4MTgxOTgsImV4cCI6MTk5NzM5NDE5OH0.CfZdfZ4kMRMeiWvUYstoNXldegEeJg7bA3YyNycUh4A";
+  document.querySelector("form").addEventListener("submit", sendForm);
+  function sendForm();
+</script>
