@@ -7,16 +7,24 @@
       />
     </a>
   </div>
-  <nav>
-    <a href="#">Wines</a>
-    <a href="#">Winemakers</a>
-    <a href="#">Regions</a>
-    <a href="#">Subscription</a>
-    <a href="#">Boxes</a>
-    <a href="#">Social Club</a>
-    <a href="#">Gift Card</a>
-    <a href="/" class="active">Deli</a>
-  </nav>
+  <div class="flex">
+    <nav>
+      <a href="#">Wines</a>
+      <a href="#">Winemakers</a>
+      <a href="#">Regions</a>
+      <a href="#">Subscription</a>
+      <a href="#">Boxes</a>
+      <a href="#">Social Club</a>
+      <a href="#">Gift Card</a>
+      <a href="/" class="active">Deli</a>
+    </nav>
+    <div class="icon-container">
+      <a href="#"><img src="search.svg" alt="search" /></a>
+      <a href="#"><img src="heart.svg" alt="heart" /></a>
+      <a href="#"><img src="account.svg" alt="account" /></a>
+      <a href="#"><img src="basket.svg" alt="basket" /></a>
+    </div>
+  </div>
 </header>
 <style>
   /* links og header-styling*/
@@ -31,7 +39,7 @@
   header {
     justify-content: space-between;
     color: #fff;
-    padding: 20px;
+    border-bottom: 0.5px solid var(--text-color);
   }
 
   nav {
@@ -60,5 +68,9 @@
     max-width: 100%;
     height: auto;
     width: 300px;
+  }
+  .icon-container img {
+    max-width: 20px;
+    margin: 1%;
   }
 </style>
