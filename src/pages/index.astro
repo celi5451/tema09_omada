@@ -1,5 +1,250 @@
 ---
 import Mainlayout from "../layouts/Mainlayout.astro";
+import Card from "../components/Card.astro";
+
+const url = "https://plvxocuuxcvvcyxybbvf.supabase.co/rest/v1/Omada";
+const options = {
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBsdnhvY3V1eGN2dmN5eHliYnZmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE4MTgxOTgsImV4cCI6MTk5NzM5NDE5OH0.CfZdfZ4kMRMeiWvUYstoNXldegEeJg7bA3YyNycUh4A",
+  },
+};
+const response = await fetch(url, options);
+const products = await response.json();
+console.log(products);
 ---
 
-<Mainlayout />
+<Mainlayout>
+  <div class="intro_section">
+    <div style="position:relative;">
+      <video autoplay loop muted controls style="width:100%; height:600px;" id="myVideo">
+        <source src="omada_vid.mov" type="video/mp4" />
+      </video>
+      <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); text-align:center;">
+        <h1>Omada wine & deli</h1>
+      </div>
+    </div>
+    <div class="info_text">
+      <p><em>Thirsty? Peckish? Curious?</em> - We’ve got you covered!</p>
+      <p>Omada Wine & Deli in Østerbro, Copenhagen, is the new omada.wine headquarters – and our brand new bottle shop and deli.</p>
+      <p>Here, we curate your simple needs for life’s better necessities; <em>wine & food.</em></p>
+    </div>
+    <div class="info_box">
+      <div>
+        <h2>Opening Hours</h2>
+        <p>Wednesdays 11–20</p>
+        <p>Thursdays 11–20</p>
+        <p>Fridays 11–20</p>
+        <p>Saturdays 11–20</p>
+        <p>Sundays 11–20</p>
+      </div>
+      <div>
+        <h2>Location</h2>
+        <div class="location-info">
+          <p>Øster Farimagsgade 26</p>
+          <p>2100, København Ø</p>
+        </div>
+        <div class="location-link">
+          <p><a href="https://goo.gl/maps/dpkbtKg6z1DwkLhK9" target="_blank">Google Maps</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="deli_section">
+    <h2>Our Deli Goods</h2>
+    <p>
+      Omada Wine & Deli is much more than just a bottle shop. We present a careful selection of local farmers’ cheese, charcuterie, sourdough bread and high quality groceries such as olive oil, vinegar, canned fish, spices and much more. From people
+      we work with directly or from people we trust. In the shop you can find the complete line up of natural wine, cider and other mixed fermentations that you know from omada.wine. And you may even enjoy a glass of wine before you decide which
+      bottle to take home.
+    </p>
+    <div class="product_grid">
+      {products.map((product) => <Card title={product.title} description={product.description} price={product.price} image={product.image} />)}
+    </div>
+  </div>
+
+  <div class="tastings_section">
+    <h2>Wine Tastings</h2>
+    <p>Whenever we have a winemaker in town, Omada Wine & Deli is the place to be!</p>
+    <div class="tastings">
+      <div class="tastings_col">
+        <h3>Public Tastings</h3>
+        <p>You can also join in on one of our open wine tastings and sample the curated selection of natural wines in omada.wine’s monthly subscription box.</p>
+        <h4>Open Wine Tasting</h4>
+        <p>Once a month you’re invited to join our open wine tasting and sample the curated selection of natural wines in omada.wine’s monthly subscription box.</p><p>DKK 145,- per person - including 6 tasting glasses.</p>
+        <p>Check out this page, subscribe to our newsletter or social media for upcoming dates.</p>
+      </div>
+      <div class="tastings_col">
+        <h3>Private Tastings</h3>
+        <p>We also do custom tailored private tastings and functions to fit your exact needs. And otherwise we offer the following plug and play solutions (minimum 4 people and up to 30):</p>
+        <h4>Intro to Mixed fermentation</h4><p>A quick session on cider, fruit pét-nat and other mixed fermentations. Approximately 1 hour.</p>
+        <p>DKK 199,- per person (with snacks + DKK 49,-)</p>
+        <h4>Natural Wine: 101</h4>
+        <p>A general introduction to the world of natural wine, its history, values, style and taste. Approximately 1 hour.</p><p>DKK 349,- per person (with snacks + DKK 75,-)</p>
+        <h4>Natural Wine: Deep Cuts from the Cellar</h4>
+        <p>A tour de force in natural wine with some of our high-end cuvées and rare vintages, curated from our cellar. Approximately 1-2 hours.</p>
+        <p>DKK 499,- per person (with snacks +75,-)</p>
+      </div>
+    </div>
+  </div>
+  <div class="events_section">
+    <h2>Plat du jour & other events</h2>
+    <p>
+      Come by for a plate of food and a glass of wine whenever one of our friends from the industry is cooking a “plat du jour”. And here's also what has happened in the deli in the latest weeks… Go visit <a
+        href="https://www.instagram.com/omada.wine/"
+        target="blank">Omada.Wine</a
+      > on instagram for further information and personal contact
+    </p>
+    <div class="insta">
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/CrOawCLMAb3/" data-instgrm-version="13">
+        <a href="https://www.instagram.com/p/CrOawCLMAb3/?type=live" target="_blank"></a>
+      </blockquote>
+      <script async src="https://www.instagram.com/embed.js"></script>
+
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/CrBAHLiMeDO/" data-instgrm-version="13">
+        <a href="https://www.instagram.com/p/CrBAHLiMeDO/?type=live" target="_blank"></a>
+      </blockquote>
+      <script async src="https://www.instagram.com/embed.js"></script>
+
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/CqSqOaNMQYd/" data-instgrm-version="13">
+        <a href="https://www.instagram.com/p/CqSqOaNMQYd/?type=live" target="_blank"></a>
+      </blockquote>
+      <script async src="https://www.instagram.com/embed.js"></script>
+    </div>
+  </div>
+  <div class="center">
+    <img src="omada_shop_sketch.webp" alt="sketch af omada shop" />
+  </div>
+</Mainlayout>
+
+<style>
+  @font-face {
+    font-family: "aviano-sans-bold";
+    src: url(../avianosans_bold.woff);
+  }
+  @font-face {
+    font-family: "georgia";
+    src: url(../georgia.woff);
+  }
+  body {
+    background-color: var(--background-color);
+  }
+  main {
+    margin: 2rem;
+  }
+  strong {
+    font-weight: bold;
+  }
+  em {
+    font-style: italic;
+  }
+  :root {
+    --deep-orange: #ff5546;
+    --light-orange: #dc9814;
+    --text-color: #1c2d37;
+    --background-color: #fffef2;
+    --dark-blue: #3b3d64;
+  }
+  h1 {
+    color: var(--deep-orange);
+    font-family: "aviano-sans";
+    text-align: center;
+    font-size: 5rem;
+  }
+  h2 {
+    color: var(--dark-blue);
+    font-family: "aviano-sans-bold";
+    text-align: center;
+  }
+  h3 {
+    color: var(--deep-orange);
+    font-family: "aviano-sans-bold";
+  }
+  h4 {
+    color: var(--dark-blue);
+    font-family: "aviano-sans";
+  }
+  p {
+    color: var(--text-color);
+    font-family: "georgia";
+    line-height: 2;
+  }
+  .intro_section,
+  .deli_section,
+  .tastings_section,
+  .events_section {
+    border-bottom: 2px solid var(--deep-orange);
+    margin-top: 5%;
+    padding-bottom: 5%;
+  }
+  .info_text {
+    text-align: center;
+    margin: 10%;
+  }
+
+  .info_box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: space-between;
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  .location-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .location-link {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+  }
+  img {
+    max-width: 100%;
+    width: 800px;
+    margin: 2%;
+  }
+  .center {
+    text-align: center;
+  }
+
+  .tastings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .tastings_col {
+    justify-content: space-between;
+    text-align: center;
+    margin: 8%;
+    margin-top: 1%;
+  }
+  .tastings_col h4 {
+    margin-top: 3rem;
+  }
+  .insta {
+    display: flex;
+    justify-content: space-around;
+  }
+  .events_section p {
+    text-align: center;
+    margin: 20%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+  }
+  .events_section a,
+  .info_box a {
+    color: var(--deep-orange);
+    text-decoration: none;
+  }
+  .events_section a:hover,
+  .info_box a:hover {
+    color: var(--light-orange);
+  }
+  .product_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+  }
+</style>
