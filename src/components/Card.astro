@@ -7,7 +7,6 @@ const { title, description, price, image } = Astro.props;
 <div class="program_element">
   <img src={`img/${image}`} alt="" />
   <h3>{title}</h3>
-  <p>{description}</p>
   <p>{price}</p>
   <Button />
 </div>
@@ -15,7 +14,9 @@ const { title, description, price, image } = Astro.props;
 <style>
   .program_element {
     margin: 1rem;
+    text-align: left;
   }
+  
   img {
     width: 300px; /* set a fixed width */
     height: 300px; /* set a fixed height */
