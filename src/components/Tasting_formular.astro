@@ -1,0 +1,161 @@
+---
+---
+
+<div class="taste">
+  <button id="book-tasting-btn">Book Wine Tasting</button>
+
+  <div id="book-tasting-form" style="display:none;">
+    <form action="your-action-here" method="POST">
+      <button id="close-btn">Close formular</button>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required />
+
+      <label for="tasting-type">Type of Tasting:</label>
+      <select id="tasting-type" name="tasting-type" required>
+        <option value="">Please select</option>
+        <option value="intro">Intro</option>
+        <option value="natural">Natural</option>
+        <option value="deep">Deep</option>
+        <option value="custom">Custom</option>
+      </select>
+
+      <label for="attendees">Number of Attendees:</label>
+      <select id="attendees" name="attendees" required>
+        <option value="">Please select</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+
+      <label for="datetime">Date & Time:</label>
+      <input type="datetime-local" id="datetime" name="datetime" required />
+
+      <label for="comments">Comments:</label>
+      <textarea id="comments" name="comments"></textarea>
+
+      <input class="submit" type="submit" value="Submit" />
+    </form>
+  </div>
+</div>
+
+<style>
+  #book-tasting-btn {
+    background-color: var(--background-color);
+    color: var(--deep-orange);
+    border: 1px solid var(--deep-orange);
+    padding: 12px 24px;
+    border-radius: 9999px;
+    font-size: 1rem;
+    cursor: pointer;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+  }
+  #book-tasting-btn:hover {
+    background-color: var(--deep-orange);
+    color: var(--background-color);
+    cursor: pointer;
+  }
+  #book-tasting-btn a {
+    text-decoration: none;
+    font-family: "georgia";
+    color: var(--deep-orange);
+  }
+  #book-tasting-btn a:hover {
+    color: var(--background-color);
+  }
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+    line-height: 2;
+    outline: 0;
+    padding: 10px 20px;
+    margin: 2%;
+    border: 1px solid #e1e1e1;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    display: block;
+    text-align: center;
+  }
+  #close-btn {
+    background-color: var(--background-color);
+    color: var(--deep-orange);
+    border: 1px solid var(--deep-orange);
+    padding: 12px 24px;
+    border-radius: 9999px;
+    font-size: 16px;
+    cursor: pointer;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+  }
+  #close-btn:hover {
+    background-color: var(--deep-orange);
+    color: var(--background-color);
+    cursor: pointer;
+  }
+  .submit {
+    background-color: var(--background-color);
+    color: var(--deep-orange);
+    border: 1px solid var(--deep-orange);
+    padding: 12px 24px;
+    border-radius: 9999px;
+    font-size: 16px;
+    cursor: pointer;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+  }
+  .submit:hover {
+    background-color: var(--deep-orange);
+    color: var(--background-color);
+    cursor: pointer;
+  }
+  form {
+    background-color: var(--background-color);
+    border: 2px solid var(--deep-orange);
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 2rem;
+  }
+</style>
+
+<script>
+  var bookTastingBtn = document.getElementById("book-tasting-btn");
+  var bookTastingForm = document.getElementById("book-tasting-form");
+  var closeBookingBtn = document.getElementById("close-btn");
+
+  bookTastingBtn.addEventListener("click", function () {
+    if (bookTastingForm.style.display === "none") {
+      bookTastingForm.style.display = "block";
+      bookTastingBtn.style.display = "none";
+    } else {
+      bookTastingForm.style.display = "none";
+    }
+  });
+  closeBookingBtn.addEventListener("click", function () {
+    if (closeBookingBtn.style.display === "none") {
+      bookTastingForm.style.display = "none";
+      bookTastingBtn.style.display = "block";
+    } else {
+      bookTastingForm.style.display = "none";
+      bookTastingBtn.style.display = "block";
+    }
+  });
+</script>

@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Product from "../components/Product.astro";
 ---
 
 <html lang="en">
@@ -13,8 +14,11 @@ import Footer from "../components/Footer.astro";
   </head>
   <body>
     <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
   </body>
-  <Footer />
 </html>
 
 <style>
