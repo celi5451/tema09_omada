@@ -1,4 +1,7 @@
-<form>
+---
+---
+
+<form id="newsletter">
   <div>
     <label for="name">Name:</label>
     <input type="text" name="name" required />
@@ -10,8 +13,29 @@
   <button>SEND</button>
 </form>
 <script>
-  const url = "https://plvxocuuxcvvcyxybbvf.supabase.co/rest/v1/testimonials";
+  const url = "https://plvxocuuxcvvcyxybbvf.supabase.co/rest/v1/testi";
   const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBsdnhvY3V1eGN2dmN5eHliYnZmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE4MTgxOTgsImV4cCI6MTk5NzM5NDE5OH0.CfZdfZ4kMRMeiWvUYstoNXldegEeJg7bA3YyNycUh4A";
-  document.querySelector("form").addEventListener("submit", sendForm);
-  function sendForm();
+  const form = document.querySelector("#newsletter");
+  form.addEventListener("submit", sendForm);
+
+  function sendForm(event) {
+    event.preventDefault();
+    const formData = form.elements;
+    let name = formData.name.value;
+    let mail = formData.mail.value;
+
+    console.log(formData.name.value);
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        apikey: key,
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, mail }),
+    });
+
+    form.reset();
+  }
 </script>
