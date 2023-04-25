@@ -1,5 +1,7 @@
 ---
 import Mainlayout from "../../layouts/Mainlayout.astro";
+import Header from "../../components/Header.astro";
+import Button2 from "../../components/Button2.astro";
 
 export async function getStaticPaths() {
   const data = await fetch("https://plvxocuuxcvvcyxybbvf.supabase.co/rest/v1/Omada", {
@@ -22,8 +24,44 @@ const { title } = Astro.props;
 ---
 
 <Mainlayout title={myData.title}>
-  <h2>{myData.title}</h2>
-  <p>{myData.description}</p>
-  <p>{myData.price}</p>
-  <img src={`img/${myData.image}`} alt="" />
+  <div class="breadcrumbs">
+    <a href="/">Hjem</a> &raquo;
+    <a href="/#deli_section">Produkter</a> &raquo;
+    <span class="current-page">{myData.title}</span>
+  </div>
+  <div class="product_singleview">
+    <div class="product_info">
+      <h2>{myData.title}</h2>
+      <p>{myData.description}</p>
+      <p>{myData.price}</p>
+      <Button2 />
+    </div>
+    <img src={`/img/${myData.image}`} alt="" />
+  </div>
 </Mainlayout>
+<style>
+  img {
+    width: 100%;
+  }
+  .product_singleview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 3rem;
+  }
+  .product_info {
+    margin: 2rem;
+  }
+  .breadcrumbs a,
+  .breadcrumbs span {
+    color: var(--text-color);
+    font-family: "georgia";
+    line-height: 2;
+    text-align: center;
+    text-decoration: none;
+  }
+  .breadcrumbs a:hover,
+  .breadcrumbs span:hover {
+    color: var(--deep-orange);
+    border-radius: 5px;
+  }
+</style>

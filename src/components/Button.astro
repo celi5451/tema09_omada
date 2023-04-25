@@ -1,7 +1,8 @@
 ---
+const {link} = Astro.props;
 ---
 
-<button class="rectangular-button"><a href="productpage">View product</a></button>
+<button class="rectangular-button"><a href={link}>View product</a></button>
 
 <style>
   .rectangular-button {

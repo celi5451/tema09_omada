@@ -9,7 +9,7 @@ console.log(data);
   <img src={`img/${data.image}`} alt="" />
   <h3>{data.title}</h3>
   <p>{data.price}</p>
-  <Button />
+  <Button link = {/products/+data.slug} />
 </article>
 
 <style>
