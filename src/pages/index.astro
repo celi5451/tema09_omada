@@ -2,16 +2,16 @@
 import Mainlayout from "../layouts/Mainlayout.astro";
 import Card from "../components/Card.astro";
 import TastingFormular from "../components/Tasting_formular.astro";
+import Slug from "./products/[slug].astro";
 
-const url = "https://plvxocuuxcvvcyxybbvf.supabase.co/rest/v1/Omada";
-const options = {
+const data = await fetch("https://plvxocuuxcvvcyxybbvf.supabase.co/rest/v1/Omada", {
+  method: "GET",
   headers: {
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBsdnhvY3V1eGN2dmN5eHliYnZmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE4MTgxOTgsImV4cCI6MTk5NzM5NDE5OH0.CfZdfZ4kMRMeiWvUYstoNXldegEeJg7bA3YyNycUh4A",
   },
-};
-const response = await fetch(url, options);
-const products = await response.json();
-console.log(products);
+}).then((res) => res.json());
+console.log(data);
+const { title } = Astro.props;
 ---
 
 <Mainlayout title="Omada">
@@ -60,9 +60,13 @@ console.log(products);
       we work with directly or from people we trust. In the shop you can find the complete line up of natural wine, cider and other mixed fermentations that you know from omada.wine. And you may even enjoy a glass of wine before you decide which
       bottle to take home.
     </p>
-    <div class="product_grid">
-      {products.map((product) => <Card title={product.title} description={product.description} price={product.price} image={product.image} />)}
-    </div>
+    <section class="product_grid">
+      {
+        data.map((product) => {
+          return <Card data={product} />;
+        })
+      }
+    </section>
   </div>
 
   <div class="tastings_section">
@@ -88,7 +92,7 @@ console.log(products);
         <p>DKK 499,- per person (with snacks +75,-)</p>
       </div>
     </div>
-    <TastingFormular/>
+    <TastingFormular />
   </div>
   <div class="events_section">
     <h2>Plat du jour & other events</h2>
